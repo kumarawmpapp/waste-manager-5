@@ -58,12 +58,9 @@ const SkipList: React.FC = () => {
           </div>
         ) : skips.length > 0 ? (
           <>
-            <div className="flex gap-4 overflow-x-auto sm:flex-wrap sm:overflow-x-visible">
+            <div className="flex gap-4 overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scrollbar-hide px-2 sm:px-0">
               {skips.map((skip) => (
-                <div
-                  key={skip.id}
-                  className="flex-shrink-0 w-80 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.5rem)]"
-                >
+                <div key={skip.id} className="flex-shrink-0 w-80 sm:w-auto">
                   <SkipCard
                     key={skip.id}
                     skip={skip}
