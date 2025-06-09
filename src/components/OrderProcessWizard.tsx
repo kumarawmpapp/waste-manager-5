@@ -3,6 +3,7 @@ import StepperController from "./StepperController";
 import SkipList from "./SkipList";
 import { useFormContext } from "../context/FormContext";
 import DefaultForm from "./DefaultForm";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const steps = [
   { id: 1, title: "Post Code", icon: "📍" },
@@ -67,17 +68,12 @@ export default function OrderProcessWizard() {
       <div className="md:col-span-3 p-6 shadow-md flex flex-col justify-between max-h-[calc(100vh-100px)] overflow-y-auto">
         <div className="flex-1 overflow-y-auto">{renderStepContent()}</div>
         <div className="mt-4 flex justify-between">
-          <button
-            onClick={handleBack}
-            className="px-4 py-2 bg-gray-500 rounded hover:bg-gray-400"
-          >
-            Back
+          <button onClick={handleBack}  className="p-2 rounded-full bg-gray-700 hover:bg-gray-600">
+            <ChevronLeft size={20} />
           </button>
-          <button
-            onClick={handleNext}
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Next
+
+          <button onClick={handleNext}  className="p-2 rounded-full bg-blue-600 hover:bg-blue-700">
+            <ChevronRight size={20} />
           </button>
         </div>
       </div>
