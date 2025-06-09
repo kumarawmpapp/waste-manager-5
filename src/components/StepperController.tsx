@@ -1,6 +1,7 @@
 import React from "react";
 
 export interface Step {
+  id: number;
   title: string;
   icon: React.ReactNode;
 }
@@ -9,17 +10,17 @@ interface StepperControllerProps {
   steps: Step[];
   currentStep: number;
   onStepChange: (index: number) => void;
-  canNavigateToStep: () => boolean;
-  children: React.ReactNode;
+  canNavigateToStep: (step: number) => boolean;
+  children?: React.ReactNode;
 }
 
 export default function StepperController({
   steps = [],
   currentStep,
   onStepChange,
-  canNavigateToStep = () => true,
+  canNavigateToStep,
 }: StepperControllerProps) {
-  const handleChange = (stepId) => {
+  const handleChange = (stepId: number) => {
     if (canNavigateToStep(stepId)) {
       onStepChange(stepId);
     }

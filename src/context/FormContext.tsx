@@ -27,7 +27,7 @@ export const FormProvider: React.FC<{ children: React.ReactNode }> = ({
     postcode: "L32",
     wasteType: "concrete",
   });
-  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [completedSteps, setCompletedSteps] = useState<number[]>([1, 2]);
 
   const goToStep = (step: number) => setCurrentStep(step);
 

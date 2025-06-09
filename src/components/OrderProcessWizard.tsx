@@ -61,7 +61,7 @@ export default function OrderProcessWizard() {
           steps={steps}
           currentStep={currentStep}
           onStepChange={goToStep}
-          canNavigateToStep={(id) => id <= currentStep || isStepCompleted(id)}
+          canNavigateToStep={(id) => id === currentStep || isStepCompleted(id)}
         />
       </div>
       <div className="md:col-span-3 bg-white rounded-xl p-6 shadow-md flex flex-col justify-between max-h-[calc(100vh-100px)] overflow-y-auto">
