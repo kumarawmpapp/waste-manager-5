@@ -64,12 +64,12 @@ export default function OrderProcessWizard() {
           canNavigateToStep={(id) => id === currentStep || isStepCompleted(id)}
         />
       </div>
-      <div className="md:col-span-3 bg-white rounded-xl p-6 shadow-md flex flex-col justify-between max-h-[calc(100vh-100px)] overflow-y-auto">
+      <div className="md:col-span-3 p-6 shadow-md flex flex-col justify-between max-h-[calc(100vh-100px)] overflow-y-auto">
         <div className="flex-1 overflow-y-auto">{renderStepContent()}</div>
         <div className="mt-4 flex justify-between">
           <button
             onClick={handleBack}
-            className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+            className="px-4 py-2 bg-gray-500 rounded hover:bg-gray-400"
           >
             Back
           </button>

@@ -22,7 +22,7 @@ const DefaultForm: React.FC<DefaultFormProps> = ({
   return (
     <div className="flex flex-col h-full">
       {/* Content */}
-      <div className="flex-1 overflow-y-auto p-6 bg-yellow-100">{children}</div>
+      <div className="flex-1 overflow-y-auto p-6">{children}</div>
     </div>
   );
 };
