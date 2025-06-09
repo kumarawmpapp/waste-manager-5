@@ -8,7 +8,7 @@ const SkipList: React.FC = () => {
   const { skips, loading, error, fetchSkips } = useSkips();
 
   return (
-    <div className="h-full bg-gray-900 text-white overflow-auto">
+    <div className="h-full overflow-y-auto bg-gray-900 text-white">
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
