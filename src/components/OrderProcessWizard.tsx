@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import StepperController from "./StepperController";
-import { UserCircle, FileText, CreditCard, CheckCircle } from "lucide-react";
+import {
+  FileText,
+  CreditCard,
+  CheckCircle,
+  Map,
+  MapPin,
+  Trash2,
+  Truck,
+  Shield,
+  Calendar,
+  LucideCreditCard,
+} from "lucide-react";
 import SkipList from "./SkipList";
 
 const steps = [
-  { id: 1, title: "Account Info", icon: <UserCircle className="w-5 h-5" /> },
-  { id: 2, title: "Details", icon: <FileText className="w-5 h-5" /> },
-  { id: 3, title: "Payment", icon: <CreditCard className="w-5 h-5" /> },
-  { id: 4, title: "Confirmation", icon: <CheckCircle className="w-5 h-5" /> },
+  { id: 1, title: "Post Code", icon: <MapPin className="w-5 h-5" /> },
+  { id: 2, title: "Waste Type", icon: <Trash2 className="w-5 h-5" /> },
+  { id: 3, title: "Select Skip", icon: <Truck className="w-5 h-5" /> },
+  { id: 4, title: "Permit Check", icon: <Shield className="w-5 h-5" /> },
+  { id: 5, title: "Choose Date", icon: <Calendar className="w-5 h-5" /> },
+  { id: 6, title: "Payment", icon: <LucideCreditCard className="w-5 h-5" /> },
 ];
 
 export default function FormWizard() {
