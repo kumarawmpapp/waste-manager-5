@@ -31,7 +31,7 @@ export const useSkips = () => {
           price_before_vat: parseFloat(skip.price_before_vat || 0),
           vat: parseFloat(skip.vat || 0),
           forbidden: skip.forbidden || false,
-          allowed_on_road: skip.allowed_on_road || true,
+          allowed_on_road: skip.allowed_on_road || false,
           allows_heavy_waste: skip.allows_heavy_waste || false,
         })
       );
