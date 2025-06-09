@@ -25,16 +25,14 @@ export const useSkips = () => {
       const transformedData = Array.isArray(data) ? data : [];
       const processedSkips = transformedData.map(
         (skip: any, index: number) => ({
-          id: skip.id || `skip-${index}`,
-          size: skip.size || skip.capacity || "Unknown",
-          hire_period_days:
-            skip.hire_period_days || skip.hirePeriodDays || skip.period || 7,
-          price_before_vat: parseFloat(
-            skip.price_before_vat || skip.priceBeforeVat || skip.basePrice || 0
-          ),
-          vat: parseFloat(skip.vat || skip.vatAmount || skip.tax || 0),
-          description: skip.description || skip.desc || "",
-          availability: skip.availability || skip.status || "Available",
+          id: skip.id || index,
+          size: skip.size || 0,
+          hire_period_days: skip.hire_period_days || 0,
+          price_before_vat: parseFloat(skip.price_before_vat || 0),
+          vat: parseFloat(skip.vat || 0),
+          forbidden: skip.forbidden || false,
+          allowed_on_road: skip.allowed_on_road || true,
+          allows_heavy_waste: skip.allows_heavy_waste || false,
         })
       );
 
