@@ -31,7 +31,7 @@ export default function StepperController({
       {/* Mobile dropdown */}
       <div className="block md:hidden mb-4">
         <select
-          className="w-full border rounded-lg p-2"
+          className="w-full bg-green border rounded-lg p-2 bg-gray-900 text-white border border-gray-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-800 transition"
           value={currentStep}
           onChange={(e) => handleChange(Number(e.target.value))}
         >
@@ -54,7 +54,7 @@ export default function StepperController({
               className={`flex items-center gap-3 p-3 text-left rounded-lg border ${
                 isActive
                   ? "bg-blue-600 text-white border-blue-600 shadow"
-                  : "bg-white hover:bg-gray-100 border-gray-300"
+                  : "bg-green hover:bg-gray-100 border-gray-300"
               }`}
             >
               {step.icon}
