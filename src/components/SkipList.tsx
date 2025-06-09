@@ -58,16 +58,21 @@ const SkipList: React.FC = () => {
           </div>
         ) : skips.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex gap-4 overflow-x-auto sm:flex-wrap sm:overflow-x-visible">
               {skips.map((skip) => (
-                <SkipCard
+                <div
                   key={skip.id}
-                  skip={skip}
-                  selected={!!skipSelection && skipSelection === skip.id}
-                  onSelect={(selectedId) =>
-                    updateFormData({ skipSelection: selectedId })
-                  }
-                />
+                  className="flex-shrink-0 w-80 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.5rem)]"
+                >
+                  <SkipCard
+                    key={skip.id}
+                    skip={skip}
+                    selected={!!skipSelection && skipSelection === skip.id}
+                    onSelect={(selectedId) =>
+                      updateFormData({ skipSelection: selectedId })
+                    }
+                  />
+                </div>
               ))}
             </div>
           </>
