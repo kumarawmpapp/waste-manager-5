@@ -3,9 +3,14 @@ import { RefreshCw, AlertCircle, Truck } from "lucide-react";
 import { useSkips } from "../hooks/useSkips";
 import SkipCard from "./SkipCard";
 import LoadingSkeleton from "./LoadingSkelton";
+import { useFormContext } from "../context/FormContext";
 
 const SkipList: React.FC = () => {
   const { skips, loading, error, fetchSkips } = useSkips();
+  const {
+    formData: { skipSelection },
+    updateFormData,
+  } = useFormContext();
 
   return (
     <div className="h-full overflow-y-auto bg-gray-900 text-white">
@@ -55,7 +60,14 @@ const SkipList: React.FC = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skips.map((skip) => (
-                <SkipCard key={skip.id} skip={skip} />
+                <SkipCard
+                  key={skip.id}
+                  skip={skip}
+                  selected={!!skipSelection && skipSelection === skip.id}
+                  onSelect={(selectedId) =>
+                    updateFormData({ skipSelection: selectedId })
+                  }
+                />
               ))}
             </div>
           </>

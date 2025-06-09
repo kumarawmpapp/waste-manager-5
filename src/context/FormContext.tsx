@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 interface FormData {
   postcode?: string;
   wasteType?: string;
-  skipSelection?: any;
+  skipSelection?: number;
   // Add other fields as needed
 }
 
@@ -23,7 +23,10 @@ export const FormProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [formData, setFormData] = useState<FormData>({});
+  const [formData, setFormData] = useState<FormData>({
+    postcode: "L32",
+    wasteType: "concrete",
+  });
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
 
   const goToStep = (step: number) => setCurrentStep(step);
@@ -33,8 +36,9 @@ export const FormProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const validateStep = (step: number) => {
-    /*if (step === 1) return !!formData.postcode;
-    if (step === 2) return !!formData.wasteType;*/
+    if (step === 1) return !!formData.postcode;
+    if (step === 2) return !!formData.wasteType;
+    if (step === 3) return !!formData.skipSelection;
     return true;
   };
 
