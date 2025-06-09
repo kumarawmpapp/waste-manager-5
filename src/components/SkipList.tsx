@@ -53,17 +53,6 @@ const SkipList: React.FC = () => {
           </div>
         ) : skips.length > 0 ? (
           <>
-            <div className="flex items-center justify-between mb-4">
-              <p className="text-gray-400">
-                Showing {skips.length} of {skips.length} skips
-              </p>
-              <div className="text-sm text-gray-400">
-                Total from £
-                {Math.min(
-                  ...skips.map((s) => s.price_before_vat + s.vat)
-                ).toFixed(2)}
-              </div>
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skips.map((skip) => (
                 <SkipCard key={skip.id} skip={skip} />

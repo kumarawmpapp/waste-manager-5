@@ -11,6 +11,7 @@ import {
   Check,
 } from "lucide-react";
 import type Skip from "../models/Skip";
+import { formatPrice } from "../utilities/PriceUtilities";
 
 interface Props {
   skip: Skip;
@@ -19,8 +20,6 @@ interface Props {
 }
 
 const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
-  const totalPrice = skip.price_before_vat + skip.vat;
-
   const indicator = (icon: React.ReactNode, label: string, isTrue: boolean) => {
     const colorClass: String = isTrue
       ? "bg-green-100 text-green-700 border-green-400"
@@ -62,7 +61,7 @@ const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
           <span>{skip.hire_period_days} days</span>
         </div>
         <div className="flex items-center gap-2 text-green-400 justify-end">
-          <span>£{totalPrice.toFixed(2)}</span>
+          <span>£{formatPrice(skip.price_before_vat, skip.vat)}</span>
         </div>
       </div>
       <hr className="my-4 border-gray-700" />
