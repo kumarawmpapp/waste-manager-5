@@ -1,5 +1,5 @@
 
-import SkipList from "./components/SkipList";
+import OrderProcessWizard from "./components/OrderProcessWizard";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="flex flex-1 overflow-hidden">
         <div className="flex-1 flex flex-col">
           <div className="flex-1 overflow-hidden">
-            <SkipList />
+          <OrderProcessWizard />
           </div>
         </div>
       </div>
