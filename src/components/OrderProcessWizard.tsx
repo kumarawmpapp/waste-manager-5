@@ -36,9 +36,17 @@ export default function OrderProcessWizard() {
   const renderStepContent = () => {
     switch (currentStep) {
       case 1:
-        return <DefaultForm label="Post Code" />;
+        return (
+          <DefaultForm label="Post Code">
+            <h1>Post Code Details...</h1>
+          </DefaultForm>
+        );
       case 2:
-        return <DefaultForm label="Waste Type" />;
+        return (
+          <DefaultForm label="Waste Type">
+            <h1>Waste Type Details...</h1>
+          </DefaultForm>
+        );
       case 3:
         return <SkipList />;
       default:
