@@ -13,6 +13,7 @@ interface Props {
 const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
   return (
     <div
+      onClick={() => onSelect?.(skip.id)}
       className={`relative bg-gray-900 border ${
         selected ? "border-blue-500" : "border-gray-800"
       } rounded-2xl p-6 shadow hover:shadow-lg transition-all flex flex-col`}
@@ -84,21 +85,6 @@ const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
           />
         )}
       </div>
-
-      {/* Select Button */}
-      <button
-        onClick={() => onSelect?.(skip.id)}
-        className={`mt-auto py-2 px-4 rounded-xl text-sm font-medium transition ${
-          skip.forbidden
-            ? "bg-gray-700 text-gray-400 cursor-not-allowed"
-            : selected
-            ? "bg-blue-700 text-white hover:bg-blue-800"
-            : "bg-blue-600 hover:bg-blue-700 text-white"
-        }`}
-        disabled={skip.forbidden}
-      >
-        {skip.forbidden ? "Not Available" : selected ? "Selected" : "Select"}
-      </button>
     </div>
   );
 };

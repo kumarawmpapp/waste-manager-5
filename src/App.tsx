@@ -1,6 +1,6 @@
 import { FormProvider } from "./context/FormContext";
 import OrderProcessWizard from "./components/OrderProcessWizard";
-import "./styles/scrollbar.css";
+// import "./styles/scrollbar.css";
 
 export default function App() {
   return (
