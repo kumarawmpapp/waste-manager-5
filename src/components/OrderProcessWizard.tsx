@@ -4,26 +4,24 @@ import { UserCircle, FileText, CreditCard, CheckCircle } from "lucide-react";
 import SkipList from "./SkipList";
 
 const steps = [
-  { id: 1, title: "Account Info", icon: <UserCircle /> },
-  { id: 2, title: "Details", icon: <FileText /> },
-  { id: 3, title: "Payment", icon: <CreditCard /> },
-  { id: 4, title: "Confirmation", icon: <CheckCircle /> },
+  { id: 1, title: "Account Info", icon: <UserCircle className="w-5 h-5" /> },
+  { id: 2, title: "Details", icon: <FileText className="w-5 h-5" /> },
+  { id: 3, title: "Payment", icon: <CreditCard className="w-5 h-5" /> },
+  { id: 4, title: "Confirmation", icon: <CheckCircle className="w-5 h-5" /> },
 ];
 
-export default function OrderProcessWizard() {
+export default function FormWizard() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const validateStep = (nextStep) => {
-    // Perform validation logic here before moving
     if (nextStep > currentStep) {
-      // prevent skipping ahead without validation
       return validateCurrentStep();
     }
     return true;
   };
 
   const validateCurrentStep = () => {
-    // Example logic
+    // Example placeholder logic for validation
     return true;
   };
 
@@ -43,16 +41,24 @@ export default function OrderProcessWizard() {
   };
 
   return (
-    <div className="p-4">
-      <StepperController
-        steps={steps}
-        currentStep={currentStep}
-        onStepChange={setCurrentStep}
-        canNavigateToStep={validateStep}
-      />
+    <div className="min-h-screen p-4 bg-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {/* Left: Stepper */}
+        <div className="md:col-span-1">
+          <StepperController
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={setCurrentStep}
+            canNavigateToStep={validateStep}
+          />
+        </div>
 
-      <div className="mt-6 p-4 border rounded-lg bg-gray-50">
-        {renderStepContent()}
+        {/* Right: Step Content */}
+        <div className="md:col-span-3">
+          <div className="p-4 rounded-xl bg-white shadow-md">
+            {renderStepContent()}
+          </div>
+        </div>
       </div>
     </div>
   );

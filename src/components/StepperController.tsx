@@ -1,5 +1,4 @@
 import React from "react";
-import { CheckCircle, Circle, AlertTriangle } from "lucide-react"; // or any icons
 
 export default function StepperController({
   steps = [],
@@ -14,8 +13,8 @@ export default function StepperController({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-4">
-      {/* Mobile Dropdown */}
+    <div className="w-full">
+      {/* Mobile dropdown */}
       <div className="block md:hidden mb-4">
         <select
           className="w-full border rounded-lg p-2"
@@ -30,7 +29,7 @@ export default function StepperController({
         </select>
       </div>
 
-      {/* Desktop Vertical Steps */}
+      {/* Desktop vertical stepper */}
       <div className="hidden md:flex flex-col space-y-2">
         {steps.map((step) => {
           const isActive = step.id === currentStep;
@@ -38,13 +37,13 @@ export default function StepperController({
             <button
               key={step.id}
               onClick={() => handleChange(step.id)}
-              className={`flex items-center gap-3 p-3 text-left rounded-lg border transition-all duration-300 ${
+              className={`flex items-center gap-3 p-3 text-left rounded-lg border ${
                 isActive
-                  ? "bg-blue-600 text-white border-blue-600 shadow-md"
+                  ? "bg-blue-600 text-white border-blue-600 shadow"
                   : "bg-white hover:bg-gray-100 border-gray-300"
               }`}
             >
-              <span>{step.icon}</span>
+              {step.icon}
               <span>{step.title}</span>
             </button>
           );
