@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Calendar,
-  PoundSterling,
-  Ban,
-  Truck,
-  Weight,
-  CheckCircle,
-  XCircle,
-  Info,
-  Check,
-} from "lucide-react";
+import { Calendar, Ban, Truck, Weight, CheckCircle } from "lucide-react";
 import type Skip from "../models/Skip";
 import { formatPrice } from "../utilities/PriceUtilities";
+import FlagIndicator from "./FlagIndicator";
 
 interface Props {
   skip: Skip;
@@ -20,19 +11,6 @@ interface Props {
 }
 
 const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
-  const indicator = (icon: React.ReactNode, label: string, isTrue: boolean) => {
-    const colorClass: String = isTrue
-      ? "bg-green-100 text-green-700 border-green-400"
-      : "bg-red-100 text-red-700 border-red-400";
-
-    return (
-      <div className="flex items-center gap-1 text-sm">
-        <div className={`p-1 rounded-full border ${colorClass}`}>{icon}</div>
-        <span className="text-gray-300">{label}</span>
-      </div>
-    );
-  };
-
   return (
     <div
       className={`relative bg-gray-900 border ${
@@ -68,21 +46,43 @@ const SkipCard: React.FC<Props> = ({ skip, onSelect, selected }) => {
 
       {/* Availability Flags */}
       <div className="flex justify-between gap-3 mb-6 flex-wrap text-gray-200">
-        {indicator(
-          <Truck size={16} />,
-          skip.allowed_on_road ? "Allowed on Road" : "Not Allowed on Road",
-          skip.allowed_on_road
+        {skip.allowed_on_road && (
+          <FlagIndicator
+            isTrue={true}
+            icon={<Truck size={16} />}
+            label="Allowed on Road"
+          />
+        )}
+        {!skip.allowed_on_road && (
+          <FlagIndicator
+            isTrue={false}
+            icon={<Truck size={16} />}
+            label="Not Allowed on Road"
+          />
         )}
 
-        {indicator(
-          <Weight size={16} />,
-          skip.allows_heavy_waste
-            ? "Supports Heavy Waste"
-            : "Does Not Support Heavy Waste",
-          skip.allows_heavy_waste
+        {skip.allows_heavy_waste && (
+          <FlagIndicator
+            isTrue={true}
+            icon={<Weight size={16} />}
+            label="Supports Heavy Waste"
+          />
+        )}
+        {!skip.allows_heavy_waste && (
+          <FlagIndicator
+            isTrue={false}
+            icon={<Weight size={16} />}
+            label="Does Not Support Heavy Waste"
+          />
         )}
 
-        {skip.forbidden && indicator(<Ban size={16} />, "Forbidden", false)}
+        {skip.forbidden && (
+          <FlagIndicator
+            isTrue={false}
+            icon={<Ban size={16} />}
+            label="Forbidden"
+          />
+        )}
       </div>
 
       {/* Select Button */}
