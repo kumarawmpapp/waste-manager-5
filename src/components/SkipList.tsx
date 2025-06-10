@@ -1,12 +1,12 @@
 import React from "react";
 import { RefreshCw, AlertCircle, Truck } from "lucide-react";
-import { useSkips } from "../hooks/useSkips";
+import { useSkipListService } from "../services/SkipService";
 import SkipCard from "./SkipCard";
 import LoadingSkeleton from "./LoadingSkelton";
 import { useFormContext } from "../context/FormContext";
 
 const SkipList: React.FC = () => {
-  const { skips, loading, error, fetchSkips } = useSkips();
+  const { skips, loading, error, fetchSkips } = useSkipListService();
   const {
     formData: { skipSelection },
     updateFormData,

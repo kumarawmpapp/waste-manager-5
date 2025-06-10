@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Skip from "../models/Skip";
 
-export const useSkips = () => {
+export const useSkipListService = () => {
   const [skips, setSkips] = useState<Skip[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
