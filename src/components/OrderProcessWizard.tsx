@@ -3,15 +3,24 @@ import StepperController from "./StepperController";
 import SkipSelectionView from "./SkipSelectionView";
 import { useFormContext } from "../context/FormContext";
 import DefaultForm from "./DefaultForm";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  CreditCard,
+  MapPin,
+  Shield,
+  Trash2,
+  Truck,
+} from "lucide-react";
 
 const steps = [
-  { id: 1, title: "Post Code", icon: "📍" },
-  { id: 2, title: "Waste Type", icon: "🗑️" },
-  { id: 3, title: "Select Skip", icon: "🚛" },
-  { id: 4, title: "Permit Check", icon: "🛡️" },
-  { id: 5, title: "Choose Date", icon: "📅" },
-  { id: 6, title: "Payment", icon: "💳" },
+  { id: 1, title: "Post Code", icon: <MapPin size={18} /> },
+  { id: 2, title: "Waste Type", icon: <Trash2 size={18} /> },
+  { id: 3, title: "Select Skip", icon: <Truck size={18} /> },
+  { id: 4, title: "Permit Check", icon: <Shield size={18} /> },
+  { id: 5, title: "Choose Date", icon: <Calendar size={18} /> },
+  { id: 6, title: "Payment", icon: <CreditCard size={18} /> },
 ];
 
 export default function OrderProcessWizard() {
