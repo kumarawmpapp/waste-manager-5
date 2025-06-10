@@ -1,18 +1,13 @@
+import { FormProvider } from "./context/FormContext";
+import OrderProcessWizard from "./components/OrderProcessWizard";
+// import "./styles/scrollbar.css";
 
-import SkipList from "./components/SkipList";
-
-function App() {
+export default function App() {
   return (
-    <div className="h-screen bg-gray-900 text-white flex flex-col overflow-hidden">
-      <div className="flex flex-1 overflow-hidden">
-        <div className="flex-1 flex flex-col">
-          <div className="flex-1 overflow-hidden">
-            <SkipList />
-          </div>
-        </div>
+    <FormProvider>
+      <div className="h-screen bg-gray-900 text-white flex flex-col overflow-hidden">
+        <OrderProcessWizard />
       </div>
-    </div>
+    </FormProvider>
   );
 }
-
-export default App;
