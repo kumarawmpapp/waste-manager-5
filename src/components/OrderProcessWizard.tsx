@@ -68,11 +68,19 @@ export default function OrderProcessWizard() {
       <div className="md:col-span-3 p-6 shadow-md flex flex-col justify-between max-h-[calc(100vh-100px)] overflow-y-auto">
         <div className="flex-1 overflow-y-auto">{renderStepContent()}</div>
         <div className="mt-4 flex justify-between">
-          <button onClick={handleBack}  className="p-2 rounded-full bg-gray-700 hover:bg-gray-600">
+          <button
+            onClick={handleBack}
+            className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
+          >
             <ChevronLeft size={20} />
           </button>
-
-          <button onClick={handleNext}  className="p-2 rounded-full bg-blue-600 hover:bg-blue-700">
+          <div>
+            <h1>Customer Care : 0800 808 5475</h1>
+          </div>
+          <button
+            onClick={handleNext}
+            className="p-2 rounded-full bg-blue-600 hover:bg-blue-700"
+          >
             <ChevronRight size={20} />
           </button>
         </div>
