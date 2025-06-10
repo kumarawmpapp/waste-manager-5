@@ -19,10 +19,10 @@ const SkipSelectionView: React.FC = () => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-white">
-              Select Skip - Lowestoft (NR32)
+              Choose Your Skip Size
             </h1>
             <p className="text-gray-400 mt-1">
-              Available skips for hire in your area
+              Select the skip size that best suits your needs
             </p>
           </div>
           {/* <button
