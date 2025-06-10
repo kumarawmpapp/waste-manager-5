@@ -39,13 +39,17 @@ export default function OrderProcessWizard() {
       case 1:
         return (
           <DefaultForm label="Post Code">
-            <h1>Post Code Details...</h1>
+            <h1>
+              Postcode details here... Please click/tap on next to proceed.
+            </h1>
           </DefaultForm>
         );
       case 2:
         return (
           <DefaultForm label="Waste Type">
-            <h1>Waste Type Details...</h1>
+            <h1>
+              Waste type details here... Please click/tap on next to proceed.
+            </h1>
           </DefaultForm>
         );
       case 3:
