@@ -5,7 +5,7 @@ import SkipCard from "./SkipCard";
 import LoadingSkeleton from "./LoadingSkelton";
 import { useFormContext } from "../context/FormContext";
 
-const SkipList: React.FC = () => {
+const SkipSelectionView: React.FC = () => {
   const { skips, loading, error, fetchSkips } = useSkipListService();
   const {
     formData: { skipSelection },
@@ -87,4 +87,4 @@ const SkipList: React.FC = () => {
   );
 };
 
-export default SkipList;
+export default SkipSelectionView;

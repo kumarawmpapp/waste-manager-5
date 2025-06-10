@@ -1,6 +1,6 @@
 import React from "react";
 import StepperController from "./StepperController";
-import SkipList from "./SkipList";
+import SkipSelectionView from "./SkipSelectionView";
 import { useFormContext } from "../context/FormContext";
 import DefaultForm from "./DefaultForm";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -49,7 +49,7 @@ export default function OrderProcessWizard() {
           </DefaultForm>
         );
       case 3:
-        return <SkipList />;
+        return <SkipSelectionView />;
       default:
         return <div>Coming Soon...</div>;
     }
