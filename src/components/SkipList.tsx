@@ -19,20 +19,20 @@ const SkipList: React.FC = () => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-white">
-              Skip Hire - Lowestoft (NR32)
+              Select Skip - Lowestoft (NR32)
             </h1>
             <p className="text-gray-400 mt-1">
               Available skips for hire in your area
             </p>
           </div>
-          <button
+          {/* <button
             onClick={fetchSkips}
             disabled={loading}
             className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-700 px-4 py-2 rounded-lg transition-colors"
           >
             <RefreshCw size={16} className={loading ? "animate-spin" : ""} />
             <span>Refresh</span>
-          </button>
+          </button> */}
         </div>
 
         {/* Content */}
